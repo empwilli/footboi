@@ -1,0 +1,65 @@
+[project]
+name = "footboi"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Tobias Langer", email = "tobias.langer@tcwl.de" }
+]
+# currently we are bound to this version bc. fints
+requires-python = ">=3.10"
+dependencies = [
+    "annotated-types>=0.7.0",
+    "fints>=4.1.0",
+    "mt-940>=4.30.0",
+    "pydantic-settings>=2.5.2",
+    "pydantic>=2.9.2",
+    "pymongo>=4.9.1",
+    "requests>=2.32.3",
+    "types-requests>=2.32.0.20240914",
+]
+
+[project.scripts]
+footboi = "footboi:cli"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = [
+    "mypy>=1.11.2",
+    "pylint>=3.3.0",
+    "ruff>=0.6.7",
+    "ssort>=0.13.0",
+    "types-requests>=2.32.0.20240914",
+]
+
+[tool.ruff]
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".eggs",
+    ".git",
+    ".ruff_cache",
+    ".venv",
+    "__pypackages__",
+    "build",
+    "dist",
+]
+line-length = 120
+indent-width = 4
+target-version = "py311"
+
+[tool.ruff.lint]
+fixable = ["ALL"]
+unfixable = []
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+docstring-code-format = true
+docstring-code-line-length = "dynamic"

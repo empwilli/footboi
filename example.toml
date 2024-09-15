@@ -1,0 +1,28 @@
+interval = "30m"
+
+[notification]
+endpoints = [
+    "http://notification_server:8080"
+]
+
+[storage]
+mongo = "mongodb://mongohost:27017/"
+
+[fints]
+product_id = "some_product_id"
+
+[fints.banks.bank1]
+bic = "12345678"
+endpoint = "https://bank1.fints.endpoint.io/fints"
+
+[fints.banks.bank2]
+bic = "12345678"
+endpoint = "https://bank2.fints.endpoint.io/fints"
+two_factor_auth = true
+
+[fints.accounts.bank1]
+name = "your name"
+iban = "..."
+bank = "..."
+login = "..."
+password = "..."
